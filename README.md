@@ -25,8 +25,8 @@ N = xx    #sersic profile index
 optical-UV fluxes measured by your instrument in which you want to remove the host
 
 
-# then you need to calibrate your host galaxy template to a measured flux of the host in a given filter and given aperture
-# there is a selection of possible filters already available in the script. If you have the host in another filter you will need to create a new flag with your filter characteristics
+#Then you need to calibrate your host galaxy template to a measured flux of the host in a given filter and given aperture
+#there is a selection of possible filters already available in the script. If you have the host in another filter you will need to create a new flag with your filter characteristics
 #you will need to iteratively run ./gal galaxy.par and host_gal.py playing with the parameter galaxy_mass until your template perfectly match the measured flux.
 #We assume here that you already know the redshift and age of the galaxy. For the age, if you don't have any idea, use 13Gyr as default.
 #If you know the color (e.g. B-V) of the host galaxy you can also contraint the age and redshift of your host
