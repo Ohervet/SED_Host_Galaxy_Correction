@@ -33,7 +33,7 @@ There is no fitting method implemented here, everthing is done manually.
 - Once you calibrated the host, you can retrieve the host-removed fluxes by turning on the flag of your instrument.
 
 
-#Extra notes
-#be careful on propagating the errors from the measured host flux to the host-removed fluxes.
-#None of the galaxy templates are perfectly accurates, systematics uncertainty can be quite large for strongly host-contaminated SED. I would be careful on not overinterpreting results for fluxes being >50% host contaminated. Fluxes >90% contaminated are not safe to remove the host. These fluxes should be considered as upper limits for the non-thermal emission.
+## Extra notes
+- Be careful on propagating the errors from the measured host flux to the host-removed fluxes.
+- None of the galaxy templates are perfectly accurate, systematics uncertainty can be quite large for strongly host-contaminated SED. I would be careful on not overinterpreting results for fluxes being >50% host contaminated. Fluxes >90% contaminated are not safe to remove the host. These fluxes should be considered as upper limits for the non-thermal emission.
 
