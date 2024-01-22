@@ -27,7 +27,36 @@ If you use this code in a scientific publication or communication, please cite t
 - The row where you put the calibrator does not matter. For the calibrator, set the aperture at 0. Be careful that each SED data point may have a different aperture. You may have to look to the technical documentation of your instrument or photometry analysis chain to retrieve the aperture. Note that what I call "aperture" here is the radius of PSF extraction, which is different from the original meaning of a telescope aperture.
 
 - Now you need to create a configuration file `host_config.txt` in the main folder. Here is an example of a configuration file:
+```
+  # Configuration file for running host galaxy correction
 
+# Data file:
+data_file=SED_data/B3_2250.dat
+
+output_file=B3_2250.out
+
+
+# Host Calibrator:
+# it needs to match the name given in the "instrument" column of the SED data file
+calibrator=R_NOT_HIRAC
+
+
+# Host effective radius [arcsec]
+Reff=5.7
+
+
+# Sersic index
+# use 4 for the standard Devaucouleur profile
+N=4
+
+
+# Redshift
+redshift=0.1187
+
+
+# Host template file
+template_file=templates/EG_13Gy.dat
+```
   
 
 - Then you need to calibrate your host galaxy template to a measured flux of the host in a given filter and given aperture
