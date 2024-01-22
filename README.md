@@ -58,18 +58,12 @@ redshift=0.1187
 template_file=templates/EG_13Gy.dat
 ```
   
+- I advise you to not change the template file unless you know what you are doing.
 
-- Then you need to calibrate your host galaxy template to a measured flux of the host in a given filter and given aperture
-There is a selection of possible filters already available in the script. If you have the host in another filter you will need to create a new flag with your filter characteristics
-You will need to iteratively run ./gal galaxy.par and host_gal.py playing with the parameter galaxy_mass until your template perfectly match the measured flux.
-We assume here that you already know the redshift and age of the galaxy. For the age, if you don't have any idea, use 13Gyr as default.
-If you know the color (e.g. B-V) of the host galaxy you can also contraint the age and redshift of your host
-There is no fitting method implemented here, everthing is done manually.
-
-- Once you calibrated the host, you can retrieve the host-removed fluxes by turning on the flag of your instrument.
+- Launch `scripts/host_corr.py` to apply the host correction. Corrected SED and associated SED plot should be written in `results/`
 
 
 ## Extra notes
-- Be careful on propagating the errors from the measured host flux to the host-removed fluxes.
-- None of the galaxy templates are perfectly accurate, systematics uncertainty can be quite large for strongly host-contaminated SED. I would be careful on not overinterpreting results for fluxes being >50% host contaminated. Fluxes >90% contaminated are not safe to remove the host. These fluxes should be considered as upper limits for the non-thermal emission.
+- You cannot use this tool if your host galaxy is not an elliptical galaxy.
+- None of the galaxy templates are perfectly accurate, and systematic uncertainty can be quite large for strongly host-contaminated SED. You should be mindful of not overinterpreting the results, especially for host corrections >50%. Fluxes >95% contaminated are not safe to be host-removed. These fluxes should be considered as upper limits for the non-thermal emission.
 
