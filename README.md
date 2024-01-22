@@ -5,13 +5,15 @@ This code makes use of PEGASE 2 spectral templates of galaxies [Fioc & Rocca-Vol
 
 Author: Olivier Hervet (ohervet@ucsc.edu)
 
+
 Acknowledgments and citation
 -------
 If you use this code in a scientific publication or communication, please cite the paper [Fioc & Rocca-Volmerange 1999](https://ui.adsabs.harvard.edu/abs/1999astro.ph.12179F/abstract). When this GitHub page goes public, please also mention it (e.g. with a footnote URL).
 
 
-- Compile the code with:
-`make gal`
+## Quick tutorial
+
+- You need to first find a good reference of the Sersic profile of your host galaxy [Wikipedia](https://en.wikipedia.org/wiki/S%C3%A9rsic_profile) and its flux measurement in a given filter (that we will call a "calibrator" in the following.
 
 - Run the code with a parameter file such as:
 `./gal galaxy.par`
