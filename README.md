@@ -24,14 +24,11 @@ If you use this code in a scientific publication or communication, please cite t
 - You need to use the exact same format as the example file `B3_2250.dat`, the columns are:
 `!nu(Hz)         F(ergcm-2s-1)   delta_nu(-)     delta_nu(+)     delta_F(-)      delta_F(+)	aperture(arcsec)	instrument`
 
-- Open `host_gal.py`
-This script is not really optimized, so there is some manual work here
+- The row where you put the calibrator does not matter. For the calibrator, set the aperture at 0. Be careful that each SED data point may have a different aperture. You may have to look to the technical documentation of your instrument or photometry analysis chain to retrieve the aperture. Note that what I call "aperture" here is the radius of PSF extraction, which is different from the original meaning of a telescope aperture.
 
-- Create a flag with your source name at the beginning of your script
-Following the example of other sources, enter the following values associated with your observation details
-`Reff = xx` effective radius in arcsec 
-`N = xx`    sersic profile index
-optical-UV fluxes measured by your instrument in which you want to remove the host
+- Now you need to create a configuration file `host_config.txt` in the main folder. Here is an example of a configuration file:
+
+  
 
 - Then you need to calibrate your host galaxy template to a measured flux of the host in a given filter and given aperture
 There is a selection of possible filters already available in the script. If you have the host in another filter you will need to create a new flag with your filter characteristics
