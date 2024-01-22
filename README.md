@@ -19,10 +19,10 @@ If you use this code in a scientific publication or communication, please cite t
 
 - Find the frequency range of the calibrator. This task may be tricky because, for some reason, the exact filter and passband are only sometimes mentioned in photometry papers. You may have to investigate the instrument technical document or other publications using the same instrument. If you find the filter transmission curve, you can estimate the frequency range as the FWHM of this curve.
 
-- Create a .dat file in `SED_data` were you will set your calibrator SED point and all other SED points that need to be corrected from the host emission.
+- Create a .dat file in `SED_data` where you will set your calibrator SED point and all other SED points that need to be corrected from the host emission.
 
-- The columns are:
-`nu[Hz], F(nu)[erg/s/Hz], nuF(nu)[erg/s], log10(nu)[Hz], log10(nuF(nu))[erg/s]`
+- You need to use the exact same format as the example file `B3_2250.dat`, the columns are:
+`!nu(Hz)         F(ergcm-2s-1)   delta_nu(-)     delta_nu(+)     delta_F(-)      delta_F(+)	aperture(arcsec)	instrument`
 
 - Open `host_gal.py`
 This script is not really optimized, so there is some manual work here
