@@ -13,7 +13,7 @@ If you use this code in a scientific publication or communication, please cite t
 
 ## Quick tutorial
 
-- You need to first find a good reference of the Sersic profile of your host galaxy [Wikipedia](https://en.wikipedia.org/wiki/S%C3%A9rsic_profile) and its flux measurement in a given filter (that we will call a "calibrator" in the following.
+- You need to first find a good reference of the Sersic profile of your host galaxy [Wikipedia](https://en.wikipedia.org/wiki/S%C3%A9rsic_profile)  and its flux measurement in a given filter that we will call a "calibrator" in the following.
 
 - Run the code with a parameter file such as:
 `./gal galaxy.par`
