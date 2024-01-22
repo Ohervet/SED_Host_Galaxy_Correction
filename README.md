@@ -19,8 +19,7 @@ If you use this code in a scientific publication or communication, please cite t
 
 - Find the frequency range of the calibrator. This task may be tricky because, for some reason, the exact filter and passband are only sometimes mentioned in photometry papers. You may have to investigate the instrument technical document or other publications using the same instrument. If you find the filter transmission curve, you can estimate the frequency range as the FWHM of this curve.
 
-- This should create a host galaxy spectrum such as:
-`data/HGS_13.dat`
+- Create a .dat file in `SED_data` were you will set your calibrator SED point and all other SED points that need to be corrected from the host emission.
 
 - The columns are:
 `nu[Hz], F(nu)[erg/s/Hz], nuF(nu)[erg/s], log10(nu)[Hz], log10(nuF(nu))[erg/s]`
