@@ -1,0 +1,28 @@
+# Configuration file for running host galaxy correction
+
+# Data file:
+data_file=SED_data/B3_2250.dat
+
+output_file=B3_2250.out
+
+
+# Host Calibrator:
+# it needs to match the name given in the "instrument" column of the SED data file
+calibrator=R_NOT_HIRAC
+
+
+# Host effective radius [arcsec]
+Reff=5.7
+
+
+# Sersic index
+# use 4 for the standard Devaucouleur profile
+N=4
+
+
+# Redshift
+redshift=0.1187
+
+
+# Host template file
+template_file=templates/EG_13Gy.dat
