@@ -1,6 +1,14 @@
 # SED_Host_Galaxy_Correction
 
-Code to remove the host galaxy emission in IR-to-UV SEDs of AGN
+Code to remove the elliptical host galaxy emission in IR-to-UV SEDs of AGN. 
+This code makes use of PEGASE 2 spectral templates of galaxies [Fioc & Rocca-Volmerange 1999](https://ui.adsabs.harvard.edu/abs/1999astro.ph.12179F/abstract). 
+
+Author: Olivier Hervet (ohervet@ucsc.edu)
+
+Acknowledgments and citation
+-------
+If you use this code in a scientific publication or communication, please cite the paper [Fioc & Rocca-Volmerange 1999](https://ui.adsabs.harvard.edu/abs/1999astro.ph.12179F/abstract). When this GitHub page goes public, please also mention it (e.g. with a footnote URL).
+
 
 - Compile the code with:
 `make gal`
