@@ -32,15 +32,27 @@ cal_data = list(data[cal_index])
 #keep only uncorrected SED data
 data.remove_row(cal_index)
 
-#read the host template
-template = host_utils.read_template(configs["template_file"])
-
 #distance luminosity of the host [cm]
-DL = host_utils.CosmoCalc(redshift, H0)
+#age at redshift z [Gyr]
+DL, zage_Gyr = host_utils.CosmoCalc(redshift, H0)
 
+
+
+#list of templates ages [Gyr]
+templates_ages = [0, 1, 5, 10, 13, 15]
+for i in range(len(templates_ages)):
+    if zage_Gyr >= templates_ages[i]:
+        #read the host templates
+        template_1 = host_utils.read_template("templates/EG_"+str(templates_ages[i])+"Gy.dat")
+        template_2 = host_utils.read_template("templates/EG_"+str(templates_ages[i+1])+"Gy.dat")
+        #linear interpolation between templates
+        template_interp = (template_1[1]*(templates_ages[i+1]-zage_Gyr) + 
+                           template_2[1]*(zage_Gyr-templates_ages[i])) / (templates_ages[i+1] - templates_ages[i])
+template = (template_1[0],template_interp)
+template = template_2
 
 #host  calibration process
-def calibration(M_gal_log, template=template):
+def calibration(M_gal_log, host_spectrum=template):
     host_spectrum = np.asarray(template) 
     host_spectrum[1] = 10**M_gal_log *  2.997924e+10/(template[0]*1e-08)  * template[1] / (4.0*np.pi*DL**2)
     #flux of the host in the calibrator energy band

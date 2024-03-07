@@ -22,7 +22,3 @@ N=4
 
 # Redshift
 redshift=0.1187
-
-
-# Host template file
-template_file=templates/EG_13Gy.dat
