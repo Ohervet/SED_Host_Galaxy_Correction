@@ -12,7 +12,9 @@ The code is licensed under a [BSD-3-Clause License](LICENSE).
 
 Acknowledgments and citation
 -------
-If you use this code in a scientific publication or communication, please cite the paper [Fioc & Rocca-Volmerange 1999](https://ui.adsabs.harvard.edu/abs/1999astro.ph.12179F/abstract) and the Zenodo version.
+If you use this code in a scientific publication or communication, please cite the Zenodo version [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10795219.svg)](https://doi.org/10.5281/zenodo.10795219), and the PEGASE 2 paper [Fioc & Rocca-Volmerange 1999](https://ui.adsabs.harvard.edu/abs/1999astro.ph.12179F/abstract).
+
+.
 
 
 ## Quick tutorial
