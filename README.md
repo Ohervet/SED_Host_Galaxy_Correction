@@ -52,13 +52,7 @@ N=4
 
 # Redshift
 redshift=0.1187
-
-
-# Host template file
-template_file=templates/EG_13Gy.dat
 ```
-  
-- I advise you to not change the template file unless you know what you are doing.
 
 - Launch `scripts/host_corr.py` to apply the host correction. Corrected SED and associated SED plot should be written in `results/`
 
