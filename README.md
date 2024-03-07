@@ -12,7 +12,7 @@ The code is licensed under a [BSD-3-Clause License](LICENSE).
 
 Acknowledgments and citation
 -------
-If you use this code in a scientific publication or communication, please cite the paper [Fioc & Rocca-Volmerange 1999](https://ui.adsabs.harvard.edu/abs/1999astro.ph.12179F/abstract). When this GitHub page goes public, please also mention it (e.g. with a footnote URL).
+If you use this code in a scientific publication or communication, please cite the paper [Fioc & Rocca-Volmerange 1999](https://ui.adsabs.harvard.edu/abs/1999astro.ph.12179F/abstract) and the Zenodo version.
 
 
 ## Quick tutorial
