@@ -5,6 +5,10 @@ This code makes use of PEGASE 2 spectral templates of galaxies [Fioc & Rocca-Vol
 
 Author: Olivier Hervet (ohervet@ucsc.edu)
 
+License
+-------
+The code is licensed under a [BSD-3-Clause License](LICENSE).
+
 
 Acknowledgments and citation
 -------
