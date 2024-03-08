@@ -49,7 +49,6 @@ for i in range(len(templates_ages)):
         template_interp = (template_1[1]*(templates_ages[i+1]-zage_Gyr) + 
                            template_2[1]*(zage_Gyr-templates_ages[i])) / (templates_ages[i+1] - templates_ages[i])
 template = (template_1[0],template_interp)
-template = template_2
 
 #host  calibration process
 def calibration(M_gal_log, host_spectrum=template):
