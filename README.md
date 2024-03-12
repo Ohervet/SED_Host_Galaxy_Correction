@@ -37,7 +37,8 @@ If you use this code in a scientific publication or communication, please cite t
 # Data file:
 data_file=SED_data/B3_2250.dat
 
-output_file=B3_2250.out
+# Output name:
+output_name=B3_2250
 
 
 # Host Calibrator:
