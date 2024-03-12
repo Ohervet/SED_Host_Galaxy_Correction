@@ -85,7 +85,7 @@ def read_configs(config_file="host_config.txt", config_string=None, verbose=Fals
     "data_file"             (str) relative path to data
     """
 
-    attributes = ["data_file", "output_file", "calibrator", "Reff", "N", "redshift"]
+    attributes = ["data_file", "output_name", "calibrator", "Reff", "N", "redshift"]
     configurations = {}  # dictionary of parameters
     if config_string is None:
         # read configurations
@@ -331,16 +331,19 @@ def YOUNG_Sersic(a, ae, N=4):
 
 
 
-def make_output(output_file, clean_SED):
+def make_output(output_name, clean_SED):
     #write SED output file
-    with open(BASE_PATH + OUPTUT_FOLDER +"/" + output_file, 'w') as f:
+    with open(BASE_PATH + OUPTUT_FOLDER +"/" + output_name+".out", 'w') as f:
         f.write("!nu(Hz)         F(ergcm-2s-1)   delta_nu(-)     delta_nu(+)     delta_F(-)      delta_F(+)	instrument\n")
         for i in range(len(clean_SED[0])):
             f.write(f'{clean_SED[0][i]:.4e}         {clean_SED[1][i]:.4e}   {clean_SED[2][i]:.4e}     {clean_SED[3][i]:.4e}     {clean_SED[4][i]:.4e}      {clean_SED[5][i]:.4e}	{clean_SED[6][i]+"_host_corrected"}\n')
+        
+    
             
 
 
-def plotting(output_file,host_spectrum, data,host_frac, cal_data, input_SED, clean_SED):
+def plotting(output_name,host_spectrum, data,host_frac, cal_data, input_SED, clean_SED):
+    plt.close('all')
     plt.plot(host_spectrum[0],host_spectrum[1],color="0.7",label = "Full host")
     instrument0 =data["instrument"][0]
     plt.plot(host_spectrum[0],host_spectrum[1] * host_frac[0],color="0.1",label = f"Host within {instrument0} aperture")
@@ -356,4 +359,4 @@ def plotting(output_file,host_spectrum, data,host_frac, cal_data, input_SED, cle
     plt.ylabel(r"$\nu F_\nu [\mathrm{erg}~\mathrm{cm}^{-2}~\mathrm{s}^{-1}]$", fontsize=14)
     plt.legend(loc="upper left")
     plt.tight_layout()
-    plt.savefig(BASE_PATH + OUPTUT_FOLDER +"/" + output_file[:-4]+".pdf", format="pdf")
+    plt.savefig(BASE_PATH + OUPTUT_FOLDER +"/" + output_name+".pdf", format="pdf")

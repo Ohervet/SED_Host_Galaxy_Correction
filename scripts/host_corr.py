@@ -7,6 +7,7 @@ Created on Sat Jan 20 13:09:02 2024
 """
 
 import numpy as np
+import logging
 import host_utils
 
 
@@ -21,6 +22,7 @@ redshift = configs["redshift"]
 calibrator = configs["calibrator"]
 Reff = configs["Reff"]
 N = configs["N"]
+output_name = configs["output_name"]
 
 #read data from SED data file
 data = host_utils.read_data(configs["data_file"])
@@ -100,16 +102,24 @@ clean_SED = data_freq, clean_flux, data_errfreq_low, data_errfreq_high, clean_er
 
 
 #write output file
-host_utils.make_output(configs["output_file"], clean_SED)
+host_utils.make_output(output_name, clean_SED)
 
+#write log file and print
+logging.basicConfig(level=logging.INFO, format='%(message)s')
+logger = logging.getLogger()
+logger.addHandler(logging.FileHandler(host_utils.BASE_PATH + host_utils.OUPTUT_FOLDER +"/"+output_name+".log", 'w'))
+print = logger.info
 print(f"Fitted mass of the galaxy: {10**M_gal_log:.4e} Mo\n")
-print(f"Host galaxy flux in SED without aperture correction [erg.cm-2.s-1]: \n", host_in_SED/host_frac,"\n")
-print(f"Host galaxy flux in SED within instrumental apertures [erg.cm-2.s-1]: \n", host_in_SED ,"\n")
-print(f"Percentage of host contamination in SED\n",  (1-(data_flux-host_in_SED)/data_flux)*100)
+print(f"Host galaxy flux in SED without aperture correction [erg.cm-2.s-1]:")#, 
+print(f"{host_in_SED/host_frac}\n")
+print(f"Host galaxy flux in SED within instrumental apertures [erg.cm-2.s-1]:")
+print(f"{host_in_SED}\n")
+print(f"Percentage of host contamination in SED:")
+print(f"{(1-(data_flux-host_in_SED)/data_flux)*100}")
 
 
 #plot and save results
-host_utils.plotting(configs["output_file"],host_spectrum, data,host_frac, cal_data, input_SED, clean_SED)
+host_utils.plotting(output_name,host_spectrum, data,host_frac, cal_data, input_SED, clean_SED)
 
 
 
