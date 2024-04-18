@@ -19,7 +19,7 @@ If you use this code in a scientific publication or communication, please cite t
 
 - You need to first find a good reference of the Sersic profile of your host galaxy ([Wikipedia](https://en.wikipedia.org/wiki/S%C3%A9rsic_profile))  and its flux measurement in a given filter that we will call a "calibrator" in the following. An example of such a reference can be [Nilsson et al. 2003](https://ui.adsabs.harvard.edu/abs/2003A%26A...400...95N/abstract).
 
-- Convert the calibrator flux in [erg cm-2 s-1]. Most of calibrator fluxes are given in magnitude. You can use the function `MagnToFlux` in `scripts/host_utils.py` for some help.
+- Convert the calibrator flux in [erg cm-2 s-1]. Most of calibrator fluxes are given in magnitude. You can use the function `MagnToFlux` in `scripts/host_utils.py` for some help (works only for AB magnitude system).
 
 - Find the frequency range of the calibrator. This task may be tricky because, for some reason, the exact filter and passband are only sometimes mentioned in photometry papers. You may have to investigate the instrument technical document or other publications using the same instrument. If you find the filter transmission curve, you can estimate the frequency range as the FWHM of this curve.
 
