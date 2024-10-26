@@ -12,6 +12,11 @@ import pathlib
 import tempfile
 import re
 from astropy.io import ascii
+import logging
+#matplotlib is too talkative, this reduces the outputs
+logging.getLogger('matplotlib').setLevel(logging.WARNING)
+logging.getLogger('PIL').setLevel(logging.WARNING)
+
 
 
 #-----physical constants-----#
@@ -352,11 +357,13 @@ def plotting(output_name,host_spectrum, data,host_frac, cal_data, input_SED, cle
                  yerr = [input_SED[4],input_SED[5]], fmt='o', label = "Input SED")
     plt.errorbar(clean_SED[0], clean_SED[1], xerr=[clean_SED[2],clean_SED[3]], 
                  yerr = [clean_SED[4],clean_SED[5]], fmt='o', label = "SED corrected from host")
-    plt.xlim([1e13,5e15])
-    plt.ylim([2e-13,1.5e-11])
+    all_datax = list(input_SED[0]) + [cal_data[0]]
+    all_datay = list(input_SED[1]) + [cal_data[1]]
+    plt.xlim(min(all_datax)/3., max(all_datax)*3.)
+    plt.ylim(min(all_datay)/3., max(all_datay)*2.)
     plt.loglog()
     plt.xlabel(r"$\nu$ [Hz]", fontsize=14)
     plt.ylabel(r"$\nu F_\nu [\mathrm{erg}~\mathrm{cm}^{-2}~\mathrm{s}^{-1}]$", fontsize=14)
-    plt.legend(loc="upper left")
+    plt.legend(loc="best")
     plt.tight_layout()
     plt.savefig(BASE_PATH + OUPTUT_FOLDER +"/" + output_name+".pdf", format="pdf")
