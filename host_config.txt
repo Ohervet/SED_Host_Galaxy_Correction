@@ -1,10 +1,10 @@
 # Configuration file for running host galaxy correction
 
 # Data file:
-data_file=SED_data/B3_2250.dat
+data_file=SED_data/Blazar.dat
 
 # Output name
-output_name=B3_2250
+output_name=Blazar
 
 
 # Host Calibrator:
