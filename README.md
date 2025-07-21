@@ -21,7 +21,7 @@ If you use this code in a scientific publication or communication, please cite t
 
 - Convert the calibrator flux in [erg cm-2 s-1]. Most of calibrator fluxes are given in magnitude. You can use the function `MagnToFlux` in `scripts/host_utils.py` for some help (works only for AB magnitude system).
 
-- Find the frequency range of the calibrator. This task may be tricky because, for some reason, the exact filter and passband are only sometimes mentioned in photometry papers. You may have to investigate the instrument technical document or other publications using the same instrument. If you find the filter transmission curve, you can estimate the frequency range as the FWHM of this curve. Multiple filters' passbands are available through the ([2SVO database](https://svo2.cab.inta-csic.es/theory/fps/index.php?&mode=browse&gname=FLWO&gname2=KeplerCam&zoom=1&all=0) 
+- Find the frequency range of the calibrator. This task may be tricky because, for some reason, the exact filter and passband are only sometimes mentioned in photometry papers. You may have to investigate the instrument technical document or other publications using the same instrument. If you find the filter transmission curve, you can estimate the frequency range as the FWHM of this curve. Multiple filters' passbands are available through the [2SVO database](https://svo2.cab.inta-csic.es/theory/fps/index.php?&mode=browse&gname=FLWO&gname2=KeplerCam&zoom=1&all=0) 
 
 - Create a .dat file in `SED_data` where you will set your calibrator SED point and all other SED points that need to be corrected from the host emission.
 
